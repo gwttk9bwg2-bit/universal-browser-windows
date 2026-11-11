@@ -57,6 +57,12 @@ Need an existing login? Run `connect-existing-browser.cmd` once and follow the E
 - **Run repeatable work:** queued automations, retries, timeouts, pause/resume/cancel, browser assertions, audit history, and multi-agent write locking.
 - **Stop safely:** human takeover, CAPTCHA pause, one-time sensitive/destructive approvals, credential redaction, and observable post-action verification.
 
+## Complete control loop
+
+The diagram below shows the entire path from one-time installation to agent connection, four-layer observation, reliability routing, the control and approval gate, real execution, post-action verification, retry limits, human takeover, and audit output.
+
+![Universal Browser complete workflow and control principles](docs/workflow-overview.png)
+
 ## How it chooses an interaction route
 
 ```mermaid

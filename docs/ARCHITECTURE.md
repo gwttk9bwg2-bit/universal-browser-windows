@@ -1,5 +1,7 @@
 # Architecture
 
+![Universal Browser complete workflow and control principles](workflow-overview.png)
+
 ```text
 MCP clients ── stdio / Streamable HTTP ── Universal Browser service
                                                 │
