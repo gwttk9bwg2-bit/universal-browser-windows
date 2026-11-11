@@ -1,0 +1,58 @@
+{
+  "name": "universal-browser-windows",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first browser control infrastructure for MCP-compatible AI agents on Windows.",
+  "author": "gwttk9bwg2-bit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwttk9bwg2-bit/universal-browser-windows.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gwttk9bwg2-bit/universal-browser-windows/issues"
+  },
+  "homepage": "https://github.com/gwttk9bwg2-bit/universal-browser-windows#readme",
+  "keywords": [
+    "mcp",
+    "browser-automation",
+    "ai-agent",
+    "windows",
+    "playwright",
+    "native-messaging"
+  ],
+  "bin": {
+    "universal-browser": "dist/cli.js",
+    "universal-browser-mcp": "dist/stdio.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/cli.ts serve",
+    "start": "node dist/cli.js serve",
+    "mcp": "node dist/stdio.js",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "vitest run test/edge.e2e.test.ts",
+    "check": "npm run typecheck && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "express": "^5.1.0",
+    "playwright-core": "^1.58.0",
+    "ws": "^8.18.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8"
+  }
+}

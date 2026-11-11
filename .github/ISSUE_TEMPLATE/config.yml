@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and usage ideas
+    url: https://github.com/gwttk9bwg2-bit/universal-browser-windows/discussions
+    about: Ask for help or share a workflow in Discussions.
+  - name: Security vulnerability
+    url: https://github.com/gwttk9bwg2-bit/universal-browser-windows/security/policy
+    about: Read the private reporting policy before disclosing a vulnerability.

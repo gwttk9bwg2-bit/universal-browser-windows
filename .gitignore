@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.universal-browser/
+coverage/
+*.log
+test-results/
+playwright-report/
+.vitest-cache/
+work/
+.env
+.env.*
+!.env.example
+release/
+outputs/
+npm-debug.log*

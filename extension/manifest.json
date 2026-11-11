@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Browser Bridge",
+  "version": "1.0.0",
+  "description": "Connect an existing Chrome or Edge session to Universal Browser.",
+  "permissions": ["nativeMessaging", "tabs", "activeTab", "scripting", "debugger", "webNavigation", "webRequest", "downloads"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{ "matches": ["<all_urls>"], "js": ["content.js"], "run_at": "document_start", "all_frames": true, "match_about_blank": true }],
+  "action": { "default_title": "Universal Browser" }
+}

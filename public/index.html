@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Universal Browser</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="brand"><span class="mark">U</span><div><strong>Universal Browser</strong><small>Windows Control Plane</small></div></div>
+      <nav>
+        <button class="active" data-view="overview">概览</button><button data-view="sessions">浏览器</button><button data-view="agents">Agent</button>
+        <button data-view="tasks">自动化</button><button data-view="network">网络</button><button data-view="audit">审计</button>
+      </nav>
+      <div class="connection"><span id="status-dot"></span><div><strong id="daemon-status">正在连接</strong><small>本地服务 · 127.0.0.1</small></div></div>
+    </aside>
+    <main>
+      <header><div><p class="eyebrow">LOCAL CONTROL PLANE</p><h1 id="page-title">运行概览</h1></div><div class="header-actions"><button id="refresh" class="ghost">刷新</button><button id="launch" class="primary">连接 Edge</button></div></header>
+      <section id="overview" class="view active">
+        <div class="hero"><div><p class="eyebrow">READY FOR AGENTS</p><h2>一个入口，安全控制你的浏览器</h2><p>连接 MCP Agent，观察每一步操作，并在敏感动作发生前保留最终决定权。</p></div><div class="pulse"><span></span><b id="ready-count">0</b><small>就绪会话</small></div></div>
+        <div class="metrics"><article><span>浏览器会话</span><strong id="m-sessions">0</strong><small>已连接</small></article><article><span>活跃 Agent</span><strong id="m-agents">0</strong><small>共享控制平面</small></article><article><span>自动化任务</span><strong id="m-tasks">0</strong><small>运行或已完成</small></article><article><span>安全事件</span><strong id="m-security">0</strong><small>近 200 条事件</small></article></div>
+        <div class="grid"><article class="panel"><div class="panel-title"><h3>浏览器状态</h3><span>实时</span></div><div id="session-list" class="list empty">尚未连接浏览器</div></article><article class="panel"><div class="panel-title"><h3>最近活动</h3><span>已脱敏</span></div><div id="activity-list" class="timeline empty">暂无操作记录</div></article></div>
+      </section>
+      <section id="sessions" class="view"><div class="panel wide"><div class="panel-title"><h3>浏览器会话</h3><span>Chrome · Edge · Firefox</span></div><div id="sessions-table"></div></div></section>
+      <section id="agents" class="view"><div class="panel wide"><div class="panel-title"><h3>Agent 与控制权</h3><span id="lock-state">未锁定</span></div><div id="agents-table"></div></div></section>
+      <section id="tasks" class="view"><div class="panel wide"><div class="panel-title"><h3>自动化任务</h3><span>暂停 · 恢复 · 重试</span></div><div id="tasks-table"></div></div></section>
+      <section id="network" class="view"><div class="panel wide"><div class="panel-title"><h3>网络观察</h3><span>请求 · 响应 · WebSocket</span></div><div id="network-table"></div></div></section>
+      <section id="audit" class="view"><div class="panel wide"><div class="panel-title"><h3>操作审计</h3><span>Cookie、Token 与密码默认脱敏</span></div><div id="audit-table"></div></div></section>
+    </main>
+  </div>
+  <dialog id="connect-dialog"><form method="dialog"><div class="dialog-head"><div><p class="eyebrow">NEW SESSION</p><h2>连接本机 Edge</h2></div><button value="cancel" class="icon">×</button></div><p>将创建独立的自动化配置目录，不会修改你的日常浏览器资料。要接入已有登录会话，请安装浏览器扩展。</p><label>会话名称<input id="session-name" value="我的 Edge"></label><label class="check"><input id="headless" type="checkbox">后台运行（无窗口）</label><div class="dialog-actions"><button value="cancel" class="ghost">取消</button><button id="connect-edge" value="default" class="primary">连接</button></div></form></dialog>
+  <div id="toast"></div><script type="module" src="/app.js"></script>
+</body>
+</html>
